@@ -35,7 +35,7 @@ javac -J-Duser.language=en -cp $CPATH *.java 2> compile.out
 if [[ $? -ne 0 ]]
 then
     echo "-------------------------------------------"
-    echo "Could not compile the student's code. Error:"
+    echo "Could not compile the student's code. Errors:"
     echo
     cat compile.out
     exit 1
@@ -52,11 +52,9 @@ java -cp $CPATH:. org.junit.runner.JUnitCore TestListExamples > test.out
 
 if [[ $? -ne 0 ]]
 then
-    echo "Student's code failed:"
-    echo
+    echo "Student's code failed:\n"
     grep "Failures: " test.out
 else
-    echo "Student's code passed:"
-    echo
+    echo "Student's code passed:\n"
     grep "OK" test.out
 fi
