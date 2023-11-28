@@ -22,7 +22,7 @@ class PalindromeChecker implements StringChecker {
 
 public class TestListExamples {
   
-  @Test
+  @Test(timeout=500)
   public void testFilterMultiple(){
   
     List<String> input = new ArrayList<>();
@@ -37,7 +37,7 @@ public class TestListExamples {
     
   }
 
-  @Test
+  @Test(timeout=500)
   public void testFilterNomatch(){
 
     List<String> input = new ArrayList<>();
@@ -51,7 +51,7 @@ public class TestListExamples {
     
   }
   
-  @Test
+  @Test(timeout=500)
   public void testFilterEmpty(){
     
     List<String> input = new ArrayList<>();
@@ -62,7 +62,7 @@ public class TestListExamples {
     
   }
 
-  @Test
+  @Test(timeout=500)
   public void testFilterLarge(){
 
     List<String> input = new ArrayList<>();
@@ -78,7 +78,7 @@ public class TestListExamples {
       assertEquals(expected, ListExamples.filter(input, new IsMoon()));
     }
     
-    @Test
+    @Test(timeout=500)
     public void testMergeLater(){
       
       
